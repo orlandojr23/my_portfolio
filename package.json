@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "author": "Orlando Jr. Fornolles <orlandojr058@gmail.com>",
+  "author": "Orlando Jr. Fornolles <orlandojuniorfornolles@gmail.com>",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

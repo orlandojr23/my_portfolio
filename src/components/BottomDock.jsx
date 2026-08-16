@@ -17,9 +17,9 @@ export function BottomDock({ onOpenCommand }) {
   ];
 
   const contactItems = [
-    { label: 'GitHub', img: 'https://cdn.simpleicons.org/github', href: 'https://github.com/ojfornolles', invertDark: true, disabled: true },
+    { label: 'GitHub', img: 'https://cdn.simpleicons.org/github', href: 'https://github.com/orlandojr23', invertDark: true, disabled: false },
     { label: 'LinkedIn', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg', href: 'https://linkedin.com/in/ojfornolles', disabled: true },
-    { label: 'Google Calendar', img: 'https://cdn.simpleicons.org/googlecalendar', href: 'https://calendar.google.com/calendar/render?action=TEMPLATE&add=orlandojr058@gmail.com' },
+    { label: 'Google Calendar', img: 'https://cdn.simpleicons.org/googlecalendar', href: 'https://calendar.google.com/calendar/render?action=TEMPLATE&add=orlandojuniorfornolles@gmail.com' },
   ];
 
   const getThemeIcon = () => {

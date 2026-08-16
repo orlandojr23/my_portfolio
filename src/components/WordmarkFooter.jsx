@@ -31,7 +31,7 @@ export function WordmarkFooter({ brandName = USER.name }) {
             </div>
           )}
           <a
-            href="https://calendar.google.com/calendar/render?action=TEMPLATE&add=orlandojr058@gmail.com"
+            href="https://calendar.google.com/calendar/render?action=TEMPLATE&add=orlandojuniorfornolles@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 hover:text-foreground transition-colors"
