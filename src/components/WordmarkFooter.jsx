@@ -8,8 +8,8 @@ export function WordmarkFooter({ brandName = USER.name }) {
 
   return (
     <footer className="relative w-full pt-12 pb-16 select-none overflow-hidden border-t border-border/40">
-      <div className="flex items-center justify-between px-6 mb-10 max-w-2xl mx-auto text-xs text-muted-foreground">
-        <div className="flex items-center gap-5">
+      <div className="flex flex-wrap items-center justify-between gap-y-3 px-6 mb-10 max-w-2xl mx-auto text-xs text-muted-foreground">
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
           {USER.social.github && (
             <div
               className="flex items-center gap-1.5 text-muted-foreground transition-colors cursor-default"
@@ -64,10 +64,31 @@ export function WordmarkFooter({ brandName = USER.name }) {
       </div>
 
       <div className="text-center px-4 my-2">
-        <h1 className="font-extrabold tracking-tight text-[8.5vw] sm:text-[7.5vw] md:text-[84px] lg:text-[104px] leading-tight text-foreground/20 dark:text-foreground/30 uppercase pointer-events-none transition-colors whitespace-nowrap">
-          {brandName}
+        <h1 className="w-full flex justify-center overflow-hidden">
+          <span className="sr-only">{brandName}</span>
+          <svg
+            viewBox="0 0 1100 110"
+            className="w-full max-w-6xl h-auto select-none pointer-events-none"
+            aria-hidden="true"
+          >
+            <text
+              x="50%"
+              y="55%"
+              dominantBaseline="middle"
+              textAnchor="middle"
+              className="font-extrabold uppercase fill-foreground/20 dark:fill-foreground/30 transition-colors"
+              style={{
+                fontSize: '70px',
+                letterSpacing: '-0.03em',
+                fontFamily: 'Inter, system-ui, -apple-system, sans-serif',
+                fontWeight: 900,
+              }}
+            >
+              {brandName}
+            </text>
+          </svg>
         </h1>
-        <p className="text-[10px] font-mono text-muted-foreground/60 mt-4 tracking-wide">
+        <p className="text-[10px] font-mono text-muted-foreground/60 mt-4 tracking-wide break-words">
           © {new Date().getFullYear()} {brandName}. All rights reserved.
         </p>
       </div>
