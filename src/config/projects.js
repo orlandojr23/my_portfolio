@@ -5,8 +5,8 @@ export const PROJECTS = [
     period: {
       start: 'Aug 2026',
     },
-    link: 'https://github.com/orlandojr23/portfolio',
-    github: 'https://github.com/orlandojr23/portfolio',
+    link: 'https://github.com/orlandojr23/my-portfolio',
+    github: 'https://github.com/orlandojr23/my-portfolio',
     logo: '/profile-photo.png',
     skills: [
       'JavaScript',
