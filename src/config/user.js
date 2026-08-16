@@ -5,7 +5,7 @@ const USER = {
   lastName: 'Fornolles',
   name: 'Orlando Jr. Fornolles',
   email: 'orlandojuniorfornolles@gmail.com',
-  domain: 'ojfornolles.dev',
+  domain: 'orlandojunior.onrender.com',
   jobTitle: 'AI & Software Developer',
   username: 'orlandojr23',
   tagline: 'Orlando Jr. | AI & Software Developer',

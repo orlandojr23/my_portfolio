@@ -34,10 +34,10 @@ Features include:
     period: {
       start: 'Aug 2026',
     },
-    link: '',
+    link: 'https://orlandojunior.onrender.com',
     github: 'https://github.com/orlandojr23/my-portfolio',
     logo: '/profile-photo.png',
-    inDevelopment: true,
+    inDevelopment: false,
     skills: [
       'JavaScript',
       'React 19',
