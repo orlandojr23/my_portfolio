@@ -14,6 +14,8 @@ export function TechStackMarquee() {
     { name: 'Next.js', logo: 'https://cdn.simpleicons.org/nextdotjs', invertDark: true },
     { name: 'PHP', logo: 'https://cdn.simpleicons.org/php', sizeClass: 'w-5 h-3.5 scale-115' },
     { name: 'MySQL', logo: 'https://cdn.simpleicons.org/mysql', sizeClass: 'w-5 h-3.5 scale-115' },
+    { name: 'Google Antigravity', logo: '/tech_logos/google_antigravity.svg' },
+    { name: 'VS Code', logo: '/tech_logos/vscode.svg' },
     { name: 'Generative AI', logo: '/tech_logos/ghost_ai.svg', invertDark: true },
     { name: 'Tailwind CSS', logo: 'https://cdn.simpleicons.org/tailwindcss' },
     { name: 'Shopify', logo: 'https://cdn.simpleicons.org/shopify' },

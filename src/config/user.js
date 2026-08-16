@@ -12,7 +12,7 @@ const USER = {
   twitterHandle: '@ojfornolles',
   location: 'Cebu, Philippines',
   description:
-    'AI & Software Developer interning in Software Development at SugboDoc Technologies Inc. and Front-End AI Engineering at FlyRank AI, leveraging Agentic AI to build modern applications.',
+    'AI & Software Developer interning in Software Development at SugboDoc Technologies Inc., leveraging Agentic AI and modern tools to build intuitive web applications.',
   namePronunciationUrl: '',
   social: {
     twitter: '',
@@ -22,9 +22,9 @@ const USER = {
   },
   flipSentences: [
     'Software Developer Intern @ SugboDoc Technologies Inc.',
-    'Front-End AI Engineer Intern @ FlyRank AI',
-    'Leveraging Agentic & Generative AI to build software.',
-    'Building modern healthcare & AI web applications.',
+    'Leveraging Agentic AI & modern developer tools.',
+    'Building modern healthcare & AI-powered web applications.',
+    'Crafting intuitive, scalable digital experiences.',
   ],
   image: {
     profile: '/profile-photo.png',

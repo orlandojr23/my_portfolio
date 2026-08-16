@@ -82,24 +82,24 @@ export default function App() {
                     : 'opacity-100 translate-y-0'
                 }`}
               >
-                <div className="flex items-center gap-2.5">
+                <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
                   {!showSplash ? (
-                    <motion.h1 layoutId="hero-name" className="font-bold text-3xl tracking-tight md:text-4xl text-foreground">
+                    <motion.h1 layoutId="hero-name" className="font-bold text-2xl sm:text-3xl md:text-4xl tracking-tight text-foreground">
                       {USER.name}
                     </motion.h1>
                   ) : (
-                    <h1 className="font-bold text-3xl tracking-tight md:text-4xl text-foreground opacity-0">
+                    <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl tracking-tight text-foreground opacity-0">
                       {USER.name}
                     </h1>
                   )}
                   <PronounceMyName name={USER.name} />
                 </div>
                 {!showSplash ? (
-                  <motion.p layoutId="hero-role" className="w-fit font-mono text-xs md:text-sm font-semibold tracking-widest text-muted-foreground uppercase">
+                  <motion.p layoutId="hero-role" className="w-fit font-mono text-[11px] sm:text-xs md:text-sm font-semibold tracking-widest text-muted-foreground uppercase">
                     {USER.jobTitle}
                   </motion.p>
                 ) : (
-                  <p className="w-fit font-mono text-xs md:text-sm font-semibold tracking-widest text-muted-foreground uppercase opacity-0">
+                  <p className="w-fit font-mono text-[11px] sm:text-xs md:text-sm font-semibold tracking-widest text-muted-foreground uppercase opacity-0">
                     {USER.jobTitle}
                   </p>
                 )}
@@ -108,19 +108,9 @@ export default function App() {
           </RevealOnLoad>
 
           <RevealOnLoad delay={0.15} duration={0.5}>
-            <div className="mt-6 space-y-3.5 text-foreground/80 text-sm md:text-base leading-relaxed">
+            <div className="mt-5 sm:mt-6 space-y-3 sm:space-y-3.5 text-foreground/80 text-sm md:text-base leading-relaxed">
               <p>
-                I'm a software developer who loves crafting intuitive and impactful digital experiences. Currently, I'm exploring the intersection of design and AI as a{' '}
-                <strong className="text-foreground font-semibold">Front-End AI Engineering</strong> intern at{' '}
-                <a
-                  href="https://flyrank.ai"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-foreground font-semibold hover:underline"
-                >
-                  FlyRank AI
-                </a>,
-                while also building modern healthcare solutions at{' '}
+                I'm an AI & software developer who loves crafting intuitive and impactful digital experiences. Currently, I'm building modern healthcare solutions at{' '}
                 <a
                   href="https://sugbodoc.com"
                   target="_blank"
@@ -129,9 +119,10 @@ export default function App() {
                 >
                   SugboDoc Technologies Inc.
                 </a>
+                , while actively exploring and applying <strong className="text-foreground font-semibold">Agentic AI Development</strong> and modern AI developer tools to engineer smart, reliable software.
               </p>
               <p>
-                Whether I'm designing scalable web apps, front-end tooling, or sleek user interfaces, my goal is always the same: to build software that feels powerful yet completely effortless to use.
+                Whether I'm designing scalable web apps, agentic workflows, or sleek user interfaces, my goal is always the same: to build software that feels powerful yet completely effortless to use.
               </p>
             </div>
           </RevealOnLoad>
@@ -140,12 +131,12 @@ export default function App() {
             <SkillsVenn
               profileImage={USER.image.profile}
               skills={{
-                top: 'Front-End AI Engineering',
+                top: 'Agentic AI Development',
                 left: 'Healthcare Tech & EMR',
                 right: 'Software Architecture',
                 bottom: 'Web APIs\n& UI Systems',
               }}
-              className="mt-10"
+              className="mt-8 sm:mt-10"
             />
           </RevealOnLoad>
         </Section>

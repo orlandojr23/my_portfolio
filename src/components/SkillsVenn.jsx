@@ -26,19 +26,19 @@ export function SkillsVenn({
         <div className="absolute bottom-0 left-1/2 h-[55%] w-[55%] -translate-x-1/2 rounded-full border border-foreground/15 bg-primary/5 transition-colors hover:border-primary/40" />
 
         {/* Skill labels */}
-        <span className="absolute top-[12%] left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-center text-xs md:text-sm font-medium text-foreground/70">
+        <span className="absolute top-[13%] left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[150px] text-center text-[11px] sm:text-xs md:text-sm font-medium text-foreground/75 leading-tight">
           {skills.top}
         </span>
 
-        <span className="absolute top-1/2 left-[12%] -translate-x-1/2 -translate-y-1/2 text-xs md:text-sm font-medium text-foreground/70">
+        <span className="absolute top-1/2 left-[12%] -translate-x-1/2 -translate-y-1/2 max-w-[85px] sm:max-w-[110px] text-center text-[11px] sm:text-xs md:text-sm font-medium text-foreground/75 leading-tight">
           {skills.left}
         </span>
 
-        <span className="absolute top-1/2 right-[12%] translate-x-1/2 -translate-y-1/2 text-xs md:text-sm font-medium text-foreground/70">
+        <span className="absolute top-1/2 right-[12%] translate-x-1/2 -translate-y-1/2 max-w-[85px] sm:max-w-[110px] text-center text-[11px] sm:text-xs md:text-sm font-medium text-foreground/75 leading-tight">
           {skills.right}
         </span>
 
-        <span className="absolute bottom-[12%] left-1/2 -translate-x-1/2 translate-y-1/2 whitespace-pre-wrap text-center text-xs md:text-sm font-medium leading-tight text-foreground/70">
+        <span className="absolute bottom-[13%] left-1/2 -translate-x-1/2 translate-y-1/2 max-w-[150px] whitespace-pre-wrap text-center text-[11px] sm:text-xs md:text-sm font-medium leading-tight text-foreground/75">
           {skills.bottom}
         </span>
 

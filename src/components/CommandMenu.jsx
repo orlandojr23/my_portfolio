@@ -34,37 +34,47 @@ export function CommandMenu({ isOpen, onClose }) {
     <AnimatePresence>
       <div
         onClick={onClose}
-        className="fixed inset-0 z-50 flex items-start justify-center pt-20 px-4 bg-background/60 backdrop-blur-sm"
+        className="fixed inset-0 z-50 flex items-start justify-center p-3 pt-12 sm:pt-20 sm:p-4 bg-background/80 backdrop-blur-md select-none"
       >
         <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: -10 }}
+          initial={{ opacity: 0, scale: 0.96, y: -8 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.95, y: -10 }}
-          transition={{ duration: 0.15 }}
+          exit={{ opacity: 0, scale: 0.96, y: -8 }}
+          transition={{ duration: 0.15, ease: 'easeOut' }}
           onClick={(e) => e.stopPropagation()}
-          className="w-full max-w-lg overflow-hidden rounded-xl border border-border bg-card shadow-2xl"
+          className="w-full max-w-lg max-h-[85vh] sm:max-h-[80vh] flex flex-col overflow-hidden rounded-xl border border-border/80 bg-card shadow-2xl ring-1 ring-border/30"
         >
-          {/* Search Input */}
-          <div className="flex items-center border-b border-border px-3 py-2.5">
+          {/* Search Input Bar */}
+          <div className="flex items-center border-b border-border/70 px-3.5 py-3 sm:py-2.5 shrink-0 bg-muted/10">
             <Search className="size-4 text-muted-foreground mr-2.5 shrink-0" />
             <input
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder={`Search projects, actions, or links... (${shortcutText})`}
-              className="w-full bg-transparent text-sm text-foreground placeholder:text-muted-foreground focus:outline-none"
+              className="w-full bg-transparent text-base sm:text-sm text-foreground placeholder:text-muted-foreground focus:outline-none"
               autoFocus
             />
+            {query && (
+              <button
+                onClick={() => setQuery('')}
+                className="p-1 text-muted-foreground hover:text-foreground active:scale-90 rounded mr-1 cursor-pointer"
+                title="Clear Search"
+              >
+                <X className="size-3.5" />
+              </button>
+            )}
             <button
               onClick={onClose}
-              className="p-1 text-muted-foreground hover:text-foreground rounded cursor-pointer"
+              className="p-1 text-muted-foreground hover:text-foreground active:scale-90 rounded cursor-pointer"
+              title="Close Menu"
             >
               <X className="size-4" />
             </button>
           </div>
 
-          {/* Results List */}
-          <div className="max-h-80 overflow-y-auto p-2 space-y-1">
+          {/* Results List with Smooth Panning */}
+          <div className="flex-1 overflow-y-auto p-2 sm:p-2.5 space-y-1 overscroll-contain touch-pan-y no-scrollbar">
             <div className="text-[10px] font-mono text-muted-foreground uppercase px-2 py-1">
               Appearance Modes
             </div>
@@ -74,9 +84,9 @@ export function CommandMenu({ isOpen, onClose }) {
                   setThemeMode('light', e);
                   onClose();
                 }}
-                className="flex w-full items-center gap-2 rounded-lg px-2.5 py-2 text-xs text-foreground hover:bg-muted transition-colors text-left cursor-pointer"
+                className="flex w-full items-center gap-2.5 rounded-lg px-2.5 py-2.5 sm:py-2 text-xs sm:text-sm text-foreground hover:bg-muted active:bg-muted/80 transition-colors text-left cursor-pointer"
               >
-                <Sun className="size-4 text-amber-400" />
+                <Sun className="size-4 text-amber-400 shrink-0" />
                 <span>Switch to Light Mode</span>
               </button>
             )}
@@ -86,9 +96,9 @@ export function CommandMenu({ isOpen, onClose }) {
                   setThemeMode('dark', e);
                   onClose();
                 }}
-                className="flex w-full items-center gap-2 rounded-lg px-2.5 py-2 text-xs text-foreground hover:bg-muted transition-colors text-left cursor-pointer"
+                className="flex w-full items-center gap-2.5 rounded-lg px-2.5 py-2.5 sm:py-2 text-xs sm:text-sm text-foreground hover:bg-muted active:bg-muted/80 transition-colors text-left cursor-pointer"
               >
-                <Moon className="size-4 text-slate-700" />
+                <Moon className="size-4 text-slate-700 shrink-0" />
                 <span>Switch to Dark Mode</span>
               </button>
             )}
@@ -98,10 +108,10 @@ export function CommandMenu({ isOpen, onClose }) {
                   setThemeMode('eyecare', e);
                   onClose();
                 }}
-                className="flex w-full items-center gap-2 rounded-lg px-2.5 py-2 text-xs text-foreground hover:bg-muted transition-colors text-left cursor-pointer"
+                className="flex w-full items-center gap-2.5 rounded-lg px-2.5 py-2.5 sm:py-2 text-xs sm:text-sm text-foreground hover:bg-muted active:bg-muted/80 transition-colors text-left cursor-pointer"
               >
-                <Eye className="size-4 text-amber-700" />
-                <span>Switch to Warm Eye Care Reading Mode</span>
+                <Eye className="size-4 text-amber-700 shrink-0" />
+                <span>Switch to Eye Care Reading Mode</span>
               </button>
             )}
 
@@ -111,24 +121,24 @@ export function CommandMenu({ isOpen, onClose }) {
             {filteredProjects.map((p) => (
               <a
                 key={p.id}
-                href={p.link}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={p.github || p.link || '#projects'}
+                target={p.github || p.link ? '_blank' : undefined}
+                rel={p.github || p.link ? 'noopener noreferrer' : undefined}
                 onClick={onClose}
-                className="flex items-center gap-2.5 rounded-lg px-2.5 py-2 text-xs text-foreground hover:bg-muted transition-colors"
+                className="flex items-center gap-2.5 rounded-lg px-2.5 py-2.5 sm:py-2 text-xs sm:text-sm text-foreground hover:bg-muted active:bg-muted/80 transition-colors"
               >
                 {p.logo ? (
                   <img
                     src={p.logo}
                     alt={p.title}
-                    className="size-4 rounded-sm object-cover shrink-0"
+                    className="size-4.5 rounded-sm object-cover shrink-0"
                   />
                 ) : (
                   <FolderGit2 className="size-4 text-muted-foreground shrink-0" />
                 )}
                 <div className="flex-1 min-w-0">
-                  <span className="font-medium truncate block">{p.title}</span>
-                  <p className="text-[10px] text-muted-foreground line-clamp-1">
+                  <span className="font-medium truncate block text-xs sm:text-sm">{p.title}</span>
+                  <p className="text-[10px] sm:text-xs text-muted-foreground line-clamp-1">
                     {p.shortDescription}
                   </p>
                 </div>
@@ -143,26 +153,30 @@ export function CommandMenu({ isOpen, onClose }) {
               target="_blank"
               rel="noopener noreferrer"
               onClick={onClose}
-              className="flex items-center gap-2 rounded-lg px-2.5 py-2 text-xs text-foreground hover:bg-muted transition-colors"
+              className="flex items-center gap-2.5 rounded-lg px-2.5 py-2.5 sm:py-2 text-xs sm:text-sm text-foreground hover:bg-muted active:bg-muted/80 transition-colors"
             >
-              <Globe className="size-4 text-muted-foreground" />
+              <Globe className="size-4 text-muted-foreground shrink-0" />
               <span>GitHub Profile</span>
             </a>
-            <a
-              href={USER.social.twitter}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={onClose}
-              className="flex items-center gap-2 rounded-lg px-2.5 py-2 text-xs text-foreground hover:bg-muted transition-colors"
-            >
-              <Globe className="size-4 text-muted-foreground" />
-              <span>X / Twitter</span>
-            </a>
+            {USER.social.twitter && (
+              <a
+                href={USER.social.twitter}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={onClose}
+                className="flex items-center gap-2.5 rounded-lg px-2.5 py-2.5 sm:py-2 text-xs sm:text-sm text-foreground hover:bg-muted active:bg-muted/80 transition-colors"
+              >
+                <Globe className="size-4 text-muted-foreground shrink-0" />
+                <span>X / Twitter</span>
+              </a>
+            )}
           </div>
 
-          <div className="border-t border-border px-3 py-1.5 bg-muted/30 text-[10px] text-muted-foreground font-mono flex items-center justify-between">
-            <span>Press ESC to close</span>
-            <span>Orlando Jr. Fornolles Portfolio</span>
+          {/* Footer Bar */}
+          <div className="border-t border-border/70 px-3.5 py-2 bg-muted/30 text-[10px] text-muted-foreground font-mono flex items-center justify-between shrink-0">
+            <span className="hidden sm:inline">ESC or click outside to close</span>
+            <span className="sm:hidden">Tap outside to close</span>
+            <span className="truncate">{USER.name}</span>
           </div>
         </motion.div>
       </div>

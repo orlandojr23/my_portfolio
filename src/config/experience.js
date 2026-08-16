@@ -28,6 +28,7 @@ export const experiences = [
     city: 'Remote',
     companyLogo: '/company_logos/flyrank.svg',
     isCurrentEmployer: true,
+    hidden: true,
     positions: [
       {
         id: 'frontend-ai-intern',

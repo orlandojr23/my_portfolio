@@ -4,7 +4,7 @@ import { ExternalLink, ChevronDown, FolderGit2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 export function ProjectsSection() {
-  const [expandedId, setExpandedId] = useState('portfolio-website');
+  const [expandedId, setExpandedId] = useState(PROJECTS[0]?.id || 'bin-go-website');
 
   const toggleExpand = (id) => {
     setExpandedId(expandedId === id ? null : id);
@@ -30,27 +30,27 @@ export function ProjectsSection() {
               {/* Card Header */}
               <div
                 onClick={() => toggleExpand(project.id)}
-                className="flex items-center justify-between p-4 cursor-pointer select-none hover:bg-muted/30 transition-colors"
+                className="flex items-start justify-between p-3.5 sm:p-4 gap-2.5 cursor-pointer select-none hover:bg-muted/30 transition-colors"
               >
-                <div className="flex items-center gap-3.5">
+                <div className="flex items-start gap-2.5 sm:gap-3.5 min-w-0 flex-1">
                   {project.logo ? (
                     <img
                       src={project.logo}
                       alt={project.title}
-                      className="size-9 rounded-lg object-cover border border-border/50 shrink-0 shadow-xs"
+                      className="size-8 sm:size-9 rounded-lg object-contain bg-card border border-border/50 shrink-0 shadow-xs mt-0.5"
                     />
                   ) : (
-                    <div className="flex size-9 items-center justify-center rounded-lg bg-muted border border-border shrink-0">
+                    <div className="flex size-8 sm:size-9 items-center justify-center rounded-lg bg-muted border border-border shrink-0 mt-0.5">
                       <FolderGit2 className="size-4 text-muted-foreground" />
                     </div>
                   )}
 
-                  <div>
-                    <div className="flex flex-wrap items-baseline gap-x-2.5 gap-y-0.5">
-                      <h3 className="font-semibold text-sm md:text-base text-foreground">
+                  <div className="min-w-0 flex-1">
+                    <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+                      <h3 className="font-semibold text-sm md:text-base text-foreground leading-tight">
                         {project.title}
                       </h3>
-                      <span className="text-xs font-mono text-muted-foreground">
+                      <span className="text-[11px] sm:text-xs font-mono text-muted-foreground">
                         {project.period.start}{' '}
                         {project.period.end
                           ? `- ${project.period.end}`
@@ -58,14 +58,14 @@ export function ProjectsSection() {
                       </span>
                     </div>
                     {project.shortDescription && (
-                      <p className="text-xs md:text-sm text-muted-foreground line-clamp-1 mt-0.5">
+                      <p className="text-xs md:text-sm text-muted-foreground line-clamp-1 mt-1">
                         {project.shortDescription}
                       </p>
                     )}
                   </div>
                 </div>
 
-                <div className="flex items-center gap-1.5 shrink-0">
+                <div className="flex items-center gap-1.5 shrink-0 mt-0.5">
                   {project.github && (
                     <a
                       href={project.github}
@@ -81,17 +81,25 @@ export function ProjectsSection() {
                     </a>
                   )}
 
-                  {project.link && (
+                  {project.link && !project.inDevelopment ? (
                     <a
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
                       title="Open Project Link"
-                      className="p-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+                      className="p-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors cursor-pointer"
                     >
                       <ExternalLink className="size-4" />
                     </a>
+                  ) : (
+                    <div
+                      onClick={(e) => e.stopPropagation()}
+                      title="Live demo in development"
+                      className="p-1.5 rounded-md text-muted-foreground/30 cursor-not-allowed select-none"
+                    >
+                      <ExternalLink className="size-4" />
+                    </div>
                   )}
 
                   <ChevronDown
@@ -117,7 +125,7 @@ export function ProjectsSection() {
                       opacity: 0,
                       transition: { duration: 0.01 },
                     }}
-                    className="border-t border-border/40 px-4 py-3.5 bg-muted/20"
+                    className="border-t border-border/40 px-3.5 sm:px-4 py-3 sm:py-3.5 bg-muted/20"
                   >
                     {project.description && (
                       <div className="text-xs md:text-sm text-foreground/85 leading-relaxed whitespace-pre-line mb-3 font-sans">
@@ -125,11 +133,11 @@ export function ProjectsSection() {
                       </div>
                     )}
 
-                    <div className="flex flex-wrap gap-1.5 pt-1">
+                    <div className="flex flex-wrap gap-1 sm:gap-1.5 pt-1">
                       {project.skills.map((skill) => (
                         <span
                           key={skill}
-                          className="rounded-md border border-border/60 bg-background px-2.5 py-0.5 font-mono text-[11px] text-muted-foreground"
+                          className="rounded-md border border-border/60 bg-background px-2 sm:px-2.5 py-0.5 font-mono text-[10px] sm:text-[11px] text-muted-foreground"
                         >
                           {skill}
                         </span>
