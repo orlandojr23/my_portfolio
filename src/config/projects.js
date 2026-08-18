@@ -5,10 +5,10 @@ export const PROJECTS = [
     period: {
       start: 'Aug 2026',
     },
-    link: '',
+    link: 'https://bin-go-web.onrender.com',
     github: 'https://github.com/orlandojr23/bin-go-website',
     logo: '/project_images/bingo.png',
-    inDevelopment: true,
+    inDevelopment: false,
     skills: [
       'Next.js 16',
       'React 19',
