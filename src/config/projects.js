@@ -5,7 +5,7 @@ export const PROJECTS = [
     period: {
       start: 'Aug 2026',
     },
-    link: 'https://bin-go-web.onrender.com',
+    link: 'https://bin-go-demo.onrender.com',
     github: 'https://github.com/orlandojr23/bin-go-website',
     logo: '/project_images/bingo.png',
     inDevelopment: false,

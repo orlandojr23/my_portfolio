@@ -188,7 +188,7 @@ export default function App() {
         <WordmarkFooter brandName={USER.name} />
       </main>
 
-      <BottomDock onOpenCommand={() => setIsCommandOpen(true)} />
+      {!showSplash && <BottomDock onOpenCommand={() => setIsCommandOpen(true)} />}
       <CommandMenu
         isOpen={isCommandOpen}
         onClose={() => setIsCommandOpen(false)}
