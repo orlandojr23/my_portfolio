@@ -66,7 +66,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-background text-foreground transition-colors overflow-x-hidden">
+    <div className={`relative min-h-screen bg-background text-foreground transition-colors overflow-x-hidden ${showSplash ? 'h-screen overflow-hidden' : ''}`}>
       <AnimatePresence>
         {showSplash && <SplashScreen />}
       </AnimatePresence>
