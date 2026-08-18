@@ -26,7 +26,7 @@ Features include:
 • Administrative dispatch dashboard with Supabase CRUD ticket management & Row Level Security (RLS)
 • High-performance Next.js App Router architecture styled with Tailwind CSS v4
 • Citizen incident reporting workflows and responsive landing page`,
-    isExpanded: true,
+    isExpanded: false,
   },
   {
     id: 'portfolio-website',

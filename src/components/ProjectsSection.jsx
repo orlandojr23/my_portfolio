@@ -4,7 +4,7 @@ import { ExternalLink, ChevronDown, FolderGit2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 export function ProjectsSection() {
-  const [expandedId, setExpandedId] = useState(PROJECTS[0]?.id || 'bin-go-website');
+  const [expandedId, setExpandedId] = useState(null);
 
   const toggleExpand = (id) => {
     setExpandedId(expandedId === id ? null : id);

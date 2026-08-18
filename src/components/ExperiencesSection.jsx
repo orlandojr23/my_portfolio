@@ -5,9 +5,7 @@ import { motion, AnimatePresence } from 'motion/react';
 
 export function ExperiencesSection() {
   const visibleExperiences = experiences.filter((exp) => !exp.hidden);
-  const [expandedRole, setExpandedRole] = useState(
-    visibleExperiences[0]?.positions[0]?.id || 'software-dev-intern'
-  );
+  const [expandedRole, setExpandedRole] = useState(null);
 
   return (
     <div className="space-y-6">
