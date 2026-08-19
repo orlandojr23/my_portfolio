@@ -1,12 +1,9 @@
 import { useEffect, useState } from 'react';
 import { USER } from '@/config/user';
 import { PronounceMyName } from '@/components/PronounceMyName';
-import { useOS } from '@/lib/hooks';
-import { Command } from 'lucide-react';
 
-export function FloatingHeader({ scrollTitle = USER.jobTitle, onOpenCommand }) {
+export function FloatingHeader({ scrollTitle = USER.jobTitle }) {
   const [scrolled, setScrolled] = useState(false);
-  const shortcutText = useOS();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,17 +42,6 @@ export function FloatingHeader({ scrollTitle = USER.jobTitle, onOpenCommand }) {
             </span>
           </div>
         </div>
-
-        {/* Right Side Command Palette Button */}
-        <button
-          onClick={onOpenCommand}
-          aria-label="Open Command Menu"
-          className="group flex items-center gap-1.5 rounded-lg border border-border/80 bg-card/60 px-2 sm:px-2.5 py-1.5 sm:py-1 text-xs text-muted-foreground hover:border-foreground/40 hover:text-foreground active:scale-95 transition-all cursor-pointer shrink-0 shadow-xs"
-        >
-          <Command className="size-3.5 text-muted-foreground group-hover:text-foreground transition-colors" />
-          <span className="font-mono text-[10px] sm:text-xs hidden xs:inline">{shortcutText}</span>
-          <span className="font-mono text-[10px] sm:text-xs inline xs:hidden">Search</span>
-        </button>
       </div>
     </header>
   );

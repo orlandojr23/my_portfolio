@@ -1,56 +1,23 @@
 import { useState } from 'react';
 import { useTheme } from '@/context/ThemeContext';
-import { useOS } from '@/lib/hooks';
-import { USER } from '@/config/user';
-import { Home, FolderGit2, Briefcase, Sun, Moon, Eye, Volume2, VolumeX, Command, X, Menu } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { Home, FolderGit2, Sun, Moon, Eye, Menu, X } from 'lucide-react';
 
-function DockTooltip({ children }) {
-  return (
-    <span className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 z-50 opacity-0 scale-90 translate-y-1 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 group-active:opacity-100 group-active:scale-100 group-active:translate-y-0 group-focus-visible:opacity-100 group-focus-visible:scale-100 group-focus-visible:translate-y-0 transition-all duration-150 ease-out select-none flex flex-col items-center">
-      <span className="flex items-center gap-1 rounded-full bg-foreground px-2 py-0.5 text-[9px] sm:text-[10px] font-mono font-medium text-background shadow-lg ring-1 ring-border/20 whitespace-nowrap">
-        {children}
-      </span>
-      <span className="border-4 border-transparent border-t-foreground -mt-[1px]" />
-    </span>
-  );
-}
-
-export function BottomDock({ onOpenCommand }) {
+export function BottomDock() {
   const [isClosed, setIsClosed] = useState(false);
-  const [soundEnabled, setSoundEnabled] = useState(true);
   const { mode, cycleTheme } = useTheme();
-  const shortcutText = useOS();
-
-  const navItems = [
-    { label: 'Home', icon: Home, href: '#' },
-    { label: 'Projects', icon: FolderGit2, href: '#projects' },
-    { label: 'Experience', icon: Briefcase, href: '#experience' },
-  ];
-
-  const contactItems = [
-    { label: 'GitHub', img: 'https://cdn.simpleicons.org/github', href: USER.social?.github || 'https://github.com/orlandojr23', invertDark: true, disabled: false },
-    { label: 'LinkedIn', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg', href: USER.social?.linkedin || 'https://linkedin.com/in/ojfornolles', disabled: true },
-    { label: 'Calendar', img: 'https://cdn.simpleicons.org/googlecalendar', href: `https://calendar.google.com/calendar/render?action=TEMPLATE&add=${encodeURIComponent(USER.email)}` },
-  ];
 
   const getThemeIcon = () => {
-    if (mode === 'dark') return <Sun className="size-3.5 sm:size-4 text-amber-400" />;
-    if (mode === 'light') return <Moon className="size-3.5 sm:size-4 text-slate-700" />;
-    return <Eye className="size-3.5 sm:size-4 text-amber-700" />;
-  };
-
-  const getThemeTooltip = () => {
-    if (mode === 'dark') return 'Light Mode';
-    if (mode === 'light') return 'Eye Care';
-    return 'Dark Mode';
+    const iconClass = "size-3 sm:size-3.5";
+    if (mode === 'dark') return <Sun className={iconClass} />;
+    if (mode === 'light') return <Moon className={iconClass} />;
+    return <Eye className={iconClass} />;
   };
 
   return (
-    <div className="fixed bottom-3 sm:bottom-4 inset-x-0 mx-auto w-fit max-w-[calc(100vw-1rem)] sm:max-w-max z-50 select-none px-1 sm:px-0">
+    <div className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50 select-none flex flex-col items-end origin-bottom-right">
       <AnimatePresence mode="wait">
         {isClosed ? (
-          /* Minimized Floating Menu Button */
           <motion.button
             key="dock-trigger"
             initial={{ opacity: 0, scale: 0.9 }}
@@ -58,97 +25,58 @@ export function BottomDock({ onOpenCommand }) {
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ type: 'tween', ease: 'easeOut', duration: 0.2 }}
             onClick={() => setIsClosed(false)}
-            title="Open Navigation"
-            className="group relative flex size-10 sm:size-11 items-center justify-center rounded-full border border-border/80 bg-background/95 shadow-2xl backdrop-blur-md ring-1 ring-border/30 text-muted-foreground hover:text-foreground hover:bg-muted active:scale-95 transition-all cursor-pointer"
+            className="flex items-center justify-center rounded-full border border-border/70 bg-card/95 size-12 sm:size-14 shadow-xl ring-1 ring-border/20 backdrop-blur-md text-foreground/80 hover:text-foreground hover:bg-foreground/5 active:scale-95 transition-all cursor-pointer"
+            aria-label="Open Menu"
           >
-            <DockTooltip>Open Menu</DockTooltip>
-            <Menu className="size-4.5 sm:size-5" />
+            <Menu className="size-5 sm:size-6" />
           </motion.button>
         ) : (
-          /* Full Navigation Dock */
           <motion.div
             key="dock-full"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: 'tween', ease: 'easeOut', duration: 0.2 }}
-            className="flex items-center gap-0.5 sm:gap-1.5 rounded-full border border-border/80 bg-background/95 p-1 sm:p-1.5 shadow-2xl backdrop-blur-md ring-1 ring-border/30 overflow-visible"
+            className="flex flex-col items-center gap-1 rounded-[2.5rem] border border-border/70 bg-card/95 p-1.5 shadow-2xl ring-1 ring-border/20 backdrop-blur-md font-mono text-[8px] sm:text-[9px] uppercase tracking-widest text-foreground/80 max-h-[calc(100dvh-2rem)] sm:max-h-[calc(100dvh-3rem)] overflow-y-auto no-scrollbar"
           >
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="group relative flex size-7.5 sm:size-9 items-center justify-center rounded-full text-muted-foreground transition-all hover:bg-muted hover:text-foreground active:scale-95 shrink-0"
-              >
-                <DockTooltip>{item.label}</DockTooltip>
-                <item.icon className="size-3.5 sm:size-4" />
-              </a>
-            ))}
-
-            <hr className="h-4 sm:h-5 w-px border-0 bg-border/60 mx-0.5 sm:mx-0.5 shrink-0" />
-
-            {contactItems.map((item) => {
-              const Component = item.disabled ? 'div' : 'a';
-              return (
-                <Component
-                  key={item.label}
-                  href={item.disabled ? undefined : item.href}
-                  target={item.disabled ? undefined : "_blank"}
-                  rel={item.disabled ? undefined : "noopener noreferrer"}
-                  className={`group relative flex size-7.5 sm:size-9 items-center justify-center rounded-full text-muted-foreground transition-all shrink-0 ${
-                    item.disabled 
-                      ? 'cursor-default opacity-50' 
-                      : 'hover:bg-muted hover:text-foreground active:scale-95 cursor-pointer'
-                  }`}
-                >
-                  <DockTooltip>{item.disabled ? `${item.label} (Soon)` : item.label}</DockTooltip>
-                  <img 
-                    src={item.img} 
-                    alt={item.label} 
-                    className={`size-3.5 sm:size-4 object-contain ${item.invertDark ? 'dark:brightness-0 dark:invert opacity-80' : ''}`} 
-                  />
-                </Component>
-              );
-            })}
-
-            <hr className="h-4 sm:h-5 w-px border-0 bg-border/60 mx-0.5 sm:mx-0.5 shrink-0" />
-
-            {/* Command Menu Button */}
-            <button
-              onClick={onOpenCommand}
-              className="group relative flex size-7.5 sm:size-9 items-center justify-center rounded-full text-muted-foreground transition-all hover:bg-muted hover:text-foreground active:scale-95 cursor-pointer shrink-0"
+            <a href="#" className="flex flex-col items-center justify-center w-12 sm:w-14 h-12 sm:h-14 gap-1 hover:text-foreground hover:bg-foreground/5 transition-colors rounded-full shrink-0">
+              <Home className="size-4 shrink-0" strokeWidth={1.5} />
+              <span>Home</span>
+            </a>
+            
+            <a href="#projects" className="flex flex-col items-center justify-center w-12 sm:w-14 h-12 sm:h-14 gap-1 hover:text-foreground hover:bg-foreground/5 transition-colors rounded-full shrink-0">
+              <FolderGit2 className="size-4 shrink-0" strokeWidth={1.5} />
+              <span>Work</span>
+            </a>
+            
+            <a 
+              href="https://calendar.google.com/calendar/render?action=TEMPLATE&add=orlandojuniorfornolles@gmail.com&text=Meeting%20with%20Orlando"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center justify-center w-12 sm:w-14 h-12 sm:h-14 gap-1 hover:text-foreground hover:bg-foreground/5 transition-colors rounded-full shrink-0 group"
             >
-              <DockTooltip>{shortcutText || 'Search'}</DockTooltip>
-              <Command className="size-3.5 sm:size-4" />
+              <svg className="size-4 fill-current opacity-80 group-hover:opacity-100 transition-opacity shrink-0" viewBox="0 0 24 24">
+                <path d="M18.316 5.684H24v12.632h-5.684V5.684zM5.684 24h12.632v-5.684H5.684V24zM18.316 5.684V0H1.895A1.894 1.894 0 0 0 0 1.895v16.421h5.684V5.684h12.632zm-7.207 6.25v-.065c.272-.144.5-.349.687-.617s.279-.595.279-.982c0-.379-.099-.72-.3-1.025a2.05 2.05 0 0 0-.832-.714 2.703 2.703 0 0 0-1.197-.257c-.6 0-1.094.156-1.481.467-.386.311-.65.671-.793 1.078l1.085.452c.086-.249.224-.461.413-.633.189-.172.445-.257.767-.257.33 0 .602.088.816.264a.86.86 0 0 1 .322.703c0 .33-.12.589-.36.778-.24.19-.535.284-.886.284h-.567v1.085h.633c.407 0 .748.109 1.02.327.272.218.407.499.407.843 0 .336-.129.614-.387.832s-.565.327-.924.327c-.351 0-.651-.103-.897-.311-.248-.208-.422-.502-.521-.881l-1.096.452c.178.616.505 1.082.977 1.401.472.319.984.478 1.538.477a2.84 2.84 0 0 0 1.293-.291c.382-.193.684-.458.902-.794.218-.336.327-.72.327-1.149 0-.429-.115-.797-.344-1.105a2.067 2.067 0 0 0-.881-.689zm2.093-1.931l.602.913L15 10.045v5.744h1.187V8.446h-.827l-2.158 1.557zM22.105 0h-3.289v5.184H24V1.895A1.894 1.894 0 0 0 22.105 0zm-3.289 23.5l4.684-4.684h-4.684V23.5zM0 22.105C0 23.152.848 24 1.895 24h3.289v-5.184H0v3.289z"/>
+              </svg>
+              <span>Meet</span>
+            </a>
+            
+            <span className="h-px w-6 bg-border/60 my-0.5 shrink-0" />
+            
+            <button onClick={(e) => cycleTheme(e)} className="flex flex-col items-center justify-center w-12 sm:w-14 h-12 sm:h-14 gap-1 hover:text-foreground hover:bg-foreground/5 transition-colors cursor-pointer rounded-full shrink-0">
+              <div className="size-4 flex items-center justify-center shrink-0">
+                {getThemeIcon()}
+              </div>
+              <span>Theme</span>
             </button>
 
-            {/* Sound Toggle */}
-            <button
-              onClick={() => setSoundEnabled(!soundEnabled)}
-              className="group relative flex size-7.5 sm:size-9 items-center justify-center rounded-full text-muted-foreground transition-all hover:bg-muted hover:text-foreground active:scale-95 cursor-pointer shrink-0"
+            <button 
+              onClick={() => setIsClosed(true)} 
+              className="flex items-center justify-center w-12 sm:w-14 h-12 sm:h-14 bg-foreground/5 hover:bg-foreground/10 text-foreground transition-colors cursor-pointer rounded-full shrink-0 mt-0.5"
+              title="Close Menu"
+              aria-label="Close Menu"
             >
-              <DockTooltip>{soundEnabled ? 'Mute' : 'Sound On'}</DockTooltip>
-              {soundEnabled ? <Volume2 className="size-3.5 sm:size-4" /> : <VolumeX className="size-3.5 sm:size-4" />}
-            </button>
-
-            {/* Unified 3-State Theme Toggle (Dark -> Light -> Eye Care -> Dark) */}
-            <button
-              onClick={(e) => cycleTheme(e)}
-              className="group relative flex size-7.5 sm:size-9 items-center justify-center rounded-full text-muted-foreground transition-all hover:bg-muted hover:text-foreground active:scale-95 cursor-pointer shrink-0"
-            >
-              <DockTooltip>{getThemeTooltip()}</DockTooltip>
-              {getThemeIcon()}
-            </button>
-
-            <hr className="h-4 sm:h-5 w-px border-0 bg-border/60 mx-0.5 sm:mx-0.5 shrink-0" />
-
-            {/* Minimize Dock Button */}
-            <button
-              onClick={() => setIsClosed(true)}
-              className="group relative flex size-6.5 sm:size-7.5 items-center justify-center rounded-full text-muted-foreground/70 hover:text-foreground hover:bg-muted/60 active:scale-95 transition-all cursor-pointer shrink-0"
-            >
-              <DockTooltip>Minimize</DockTooltip>
-              <X className="size-3 sm:size-3.5" />
+              <X className="size-5" strokeWidth={1.5} />
             </button>
           </motion.div>
         )}

@@ -1,7 +1,6 @@
 import { cn } from '@/lib/utils';
 
 export function SkillsVenn({
-  profileImage,
   skills = {
     top: 'Frontend Architecture',
     left: 'Design Systems',
@@ -26,30 +25,21 @@ export function SkillsVenn({
         <div className="absolute bottom-0 left-1/2 h-[55%] w-[55%] -translate-x-1/2 rounded-full border border-foreground/15 bg-primary/5 transition-colors hover:border-primary/40" />
 
         {/* Skill labels */}
-        <span className="absolute top-[13%] left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[150px] text-center text-[11px] sm:text-xs md:text-sm font-medium text-foreground/75 leading-tight">
+        <span className="absolute top-[20%] left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[150px] text-center text-[11px] sm:text-xs md:text-sm font-medium text-foreground/75 leading-tight">
           {skills.top}
         </span>
 
-        <span className="absolute top-1/2 left-[12%] -translate-x-1/2 -translate-y-1/2 max-w-[85px] sm:max-w-[110px] text-center text-[11px] sm:text-xs md:text-sm font-medium text-foreground/75 leading-tight">
+        <span className="absolute top-1/2 left-[20%] -translate-x-1/2 -translate-y-1/2 max-w-[85px] sm:max-w-[110px] text-center text-[11px] sm:text-xs md:text-sm font-medium text-foreground/75 leading-tight">
           {skills.left}
         </span>
 
-        <span className="absolute top-1/2 right-[12%] translate-x-1/2 -translate-y-1/2 max-w-[85px] sm:max-w-[110px] text-center text-[11px] sm:text-xs md:text-sm font-medium text-foreground/75 leading-tight">
+        <span className="absolute top-1/2 right-[20%] translate-x-1/2 -translate-y-1/2 max-w-[85px] sm:max-w-[110px] text-center text-[11px] sm:text-xs md:text-sm font-medium text-foreground/75 leading-tight">
           {skills.right}
         </span>
 
-        <span className="absolute bottom-[13%] left-1/2 -translate-x-1/2 translate-y-1/2 max-w-[150px] whitespace-pre-wrap text-center text-[11px] sm:text-xs md:text-sm font-medium leading-tight text-foreground/75">
+        <span className="absolute bottom-[20%] left-1/2 -translate-x-1/2 translate-y-1/2 max-w-[150px] whitespace-pre-wrap text-center text-[11px] sm:text-xs md:text-sm font-medium leading-tight text-foreground/75">
           {skills.bottom}
         </span>
-
-        {/* Center profile avatar with ambient glow ring */}
-        <div className="group absolute top-1/2 left-1/2 h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full border-4 border-background shadow-2xl ring-2 ring-foreground/20 hover:ring-foreground/50 transition-all duration-300">
-          <img
-            src={profileImage}
-            alt="Orlando Jr. Fornolles Profile"
-            className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
-          />
-        </div>
       </div>
     </div>
   );
