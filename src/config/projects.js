@@ -26,4 +26,31 @@ Features include:
 • **Responsive Typography:** Fluid font scaling and custom sleek floating scrollbars for a highly polished cross-browser experience.`,
     isExpanded: false,
   },
+  {
+    id: 'bingo-admin-dashboard',
+    title: 'Bin-Go Admin Dashboard',
+    period: {
+      start: 'Aug 2026',
+    },
+    link: 'https://simplybingo.onrender.com',
+    github: 'https://github.com/orlandojr23/bingo_website',
+    inDevelopment: true,
+    skills: [
+      'Next.js 16.3',
+      'React 19',
+      'Tailwind CSS v4',
+      'Framer Motion',
+      'Leaflet',
+      'Supabase',
+    ],
+    shortDescription:
+      'An incident reporting and waste management tracking dashboard designed for streamlined oversight of municipal garbage collection and sanitation teams.',
+    description: `Built to oversee live reports, this dashboard features interactive mapping for incident locations, real-time KPI tracking, and ticketing workflows to ensure clean and safe communities.
+
+Features include:
+• **Interactive Mapping:** Powered by Leaflet to track and display incident locations precisely.
+• **Live Oversight:** Real-time KPI tracking and monitoring for municipal garbage collection.
+• **Ticketing Workflows:** Streamlined assignment and resolution system for sanitation teams.`,
+    isExpanded: false,
+  },
 ];
