@@ -27,8 +27,8 @@ Features include:
     isExpanded: false,
   },
   {
-    id: 'bingo-admin-dashboard',
-    title: 'Bin-Go Admin Dashboard',
+    id: 'bingo-platform',
+    title: 'Bin-Go Smart Waste Management Platform',
     period: {
       start: 'Aug 2026',
     },
@@ -42,15 +42,17 @@ Features include:
       'Framer Motion',
       'Leaflet',
       'Supabase',
+      'Lucide React',
     ],
     shortDescription:
-      'An incident reporting and waste management tracking dashboard designed for streamlined oversight of municipal garbage collection and sanitation teams.',
-    description: `Built to oversee live reports, this dashboard features interactive mapping for incident locations, real-time KPI tracking, and ticketing workflows to ensure clean and safe communities.
+      'A full-stack, multi-sided community waste collection platform featuring a public landing page with an interactive 3D phone showcase model, citizen live tracking & reporting portal, driver navigation interface, and an admin command dashboard.',
+    description: `Comprehensive smart community waste management platform connecting citizens, collection drivers, and local barangay administrators into a single collaborative ecosystem.
 
 Features include:
-• **Interactive Mapping:** Powered by Leaflet to track and display incident locations precisely.
-• **Live Oversight:** Real-time KPI tracking and monitoring for municipal garbage collection.
-• **Ticketing Workflows:** Streamlined assignment and resolution system for sanitation teams.`,
+• **Landing Page & 3D Product Showcase:** Interactive landing page with Home, About, Features, FAQ, and Download sections, featuring an animated 3D phone mockup showcase model and a unified slide-over registration/login sheet.
+• **Citizen / User Tracking Portal:** Live GPS tracking of garbage compactor trucks with arrival ETAs, swipeable weekly collection schedules by waste category, and quick-action waste incident reporting.
+• **Driver Operations Interface:** Dedicated mobile portal with secure authentication, daily collection route assignments, and interactive navigation mode with real-time GPS tracking and route completion workflows.
+• **Community Admin Command Center:** Centralized barangay dashboard featuring real-time KPI metrics, multi-layer live mapping (Pins, Heatmap, Combined), fleet dispatch & staff scheduling, Supabase-backed incident CRUD & ticketing workflows, 6-month historical analytics, and automated alert notifications.`,
     isExpanded: false,
   },
 ];

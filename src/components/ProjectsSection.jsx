@@ -1,5 +1,20 @@
 import { PROJECTS } from '@/config/projects';
 
+function renderFormattedText(text) {
+  if (!text) return null;
+  const parts = text.split(/(\*\*.*?\*\*)/g);
+  return parts.map((part, index) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return (
+        <strong key={index} className="font-semibold text-foreground">
+          {part.slice(2, -2)}
+        </strong>
+      );
+    }
+    return part;
+  });
+}
+
 export function ProjectsSection() {
   return (
     <div className="space-y-6 sm:space-y-8">
@@ -25,7 +40,7 @@ export function ProjectsSection() {
 
             {/* Description */}
             <p className="text-foreground/80 text-sm md:text-base leading-relaxed whitespace-pre-line">
-              {project.description || project.shortDescription}
+              {renderFormattedText(project.description || project.shortDescription)}
             </p>
 
             {/* Skills */}
