@@ -12,7 +12,7 @@ const USER = {
   twitterHandle: '@ojfornolles',
   location: 'Cebu, Philippines',
   description:
-    'AI & Software Developer interning in Software Development at SugboDoc Technologies Inc., leveraging Agentic AI and modern tools to build intuitive web applications.',
+    'AI & Software Developer based in Cebu, Philippines. Focused on building intuitive web applications, scalable full-stack projects, and exploring agentic AI workflows to create software that feels powerful yet remarkably simple to use.',
   namePronunciationUrl: '',
   social: {
     twitter: '',

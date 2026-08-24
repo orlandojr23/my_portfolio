@@ -69,10 +69,10 @@ export default function App() {
           <RevealOnLoad delay={0.15} duration={0.5}>
             <div className="mt-5 sm:mt-6 space-y-3 sm:space-y-3.5 text-foreground/80 text-sm md:text-base leading-relaxed">
               <p>
-                I'm an AI and software developer who loves building things that are simple and genuinely helpful. Right now, I'm building modern healthcare software at <strong className="text-foreground font-semibold">SugboDoc Technologies Inc.</strong>, while exploring how <strong className="text-foreground font-semibold">Agentic AI</strong> and modern developer tools can help us build smarter, more reliable software.
+                I'm an AI &amp; software developer based in Cebu, Philippines. I focus on building intuitive web applications, scalable full-stack projects, and exploring <strong className="text-foreground font-semibold">Agentic AI</strong> workflows to create software that feels powerful yet remarkably simple to use.
               </p>
               <p>
-                Whether I'm building a web app, setting up AI workflows, or designing a clean user interface, my goal is always the same: to make software that feels powerful but is incredibly easy to use.
+                Whether I'm engineering a web app, setting up autonomous AI workflows, or crafting clean user interfaces, my goal is always the same: to make software that feels simple, fast, and genuinely helpful.
               </p>
             </div>
           </RevealOnLoad>
