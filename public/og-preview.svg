@@ -1,13 +1,13 @@
 <svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;800&amp;family=JetBrains+Mono:wght@600&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&amp;family=JetBrains+Mono:wght@600;700&amp;display=swap');
 
       .name-text {
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        font-size: 68px;
-        font-weight: 700;
-        fill: #fafafa;
+        font-size: 74px;
+        font-weight: 800;
+        fill: #ffffff;
         letter-spacing: -2px;
         text-anchor: middle;
         dominant-baseline: middle;
@@ -15,10 +15,10 @@
 
       .role-text {
         font-family: 'JetBrains Mono', 'Consolas', 'Fira Code', monospace;
-        font-size: 19px;
-        font-weight: 600;
-        fill: #71717a;
-        letter-spacing: 6px;
+        font-size: 26px;
+        font-weight: 700;
+        fill: #a1a1aa;
+        letter-spacing: 4.5px;
         text-anchor: middle;
         dominant-baseline: middle;
         text-transform: uppercase;
@@ -29,12 +29,12 @@
   <!-- Clean Obsidian Background matching portfolio dark theme -->
   <rect width="1200" height="630" fill="#09090b" />
 
-  <!-- Center Content - Exact Splash Screen Mirror -->
+  <!-- Center Content -->
   <g transform="translate(600, 315)">
     <!-- Main Name -->
-    <text y="-20" class="name-text">Orlando Jr. Fornolles</text>
+    <text y="-28" class="name-text">Orlando Jr. Fornolles</text>
 
-    <!-- Role -->
-    <text y="50" class="role-text">AI &amp; SOFTWARE DEVELOPER</text>
+    <!-- Role (Crisp, High-Contrast & Larger) -->
+    <text y="52" class="role-text">AI &amp; SOFTWARE DEVELOPER</text>
   </g>
 </svg>
