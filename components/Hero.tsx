@@ -9,8 +9,8 @@ const fredoka = Fredoka({ weight: "500", subsets: ["latin"] });
 
 export default function Hero() {
   return (
-    <section aria-labelledby="hero-heading" className="pb-20 pt-16 sm:pb-28 sm:pt-24">
-      <Reveal>
+    <section aria-labelledby="hero-heading" className="relative pb-12 pt-10 sm:pb-28 sm:pt-24">
+      <Reveal className="relative z-10">
         <h1
           id="hero-heading"
           className="text-4xl font-semibold tracking-tight text-balance sm:text-5xl"
@@ -108,7 +108,7 @@ export default function Hero() {
           </ul>
         </nav>
 
-        <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
+        <div className="mt-8 flex flex-col gap-4 sm:mt-10 sm:flex-row sm:items-center sm:gap-6">
           {profile.location && (
             <p className="flex items-center gap-2 font-mono text-xs tracking-wide" style={{ color: "var(--muted)" }}>
               <MapPin 
