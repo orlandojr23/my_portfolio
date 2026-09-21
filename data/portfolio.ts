@@ -122,5 +122,5 @@ export const site = {
   title: "Orlando F. | AI & Software Developer",
   description:
     "Orlando Junior Fornolles is an AI & Software Developer and indie developer building intuitive software at the intersection of AI and modern software development.",
-  url: "https://your-domain.vercel.app", // Replace with your real domain
+  url: "https://orlandojuniorfornolles.vercel.app",
 };
