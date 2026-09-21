@@ -105,7 +105,61 @@ export default function Hero() {
           </ul>
         </nav>
 
-        <div className="mt-8 flex flex-col gap-4 sm:mt-10 sm:flex-row sm:items-center sm:gap-6">
+        <div className="mt-6 flex items-center gap-6 sm:hidden">
+          <a
+            href={profile.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex min-h-11 items-center gap-1.5 text-[15px] transition-colors hover:text-[var(--foreground)]"
+            style={{ color: "var(--muted)" }}
+            aria-label="GitHub profile (opens in a new tab)"
+          >
+            <GithubIcon 
+              width={15} 
+              height={15} 
+              strokeWidth={1.75} 
+              aria-hidden="true" 
+              style={{
+                color: "var(--foreground)",
+                filter: "drop-shadow(1px 1px 0px var(--accent)) drop-shadow(2px 2px 0px rgba(0,0,0,0.1))",
+                transform: "translateY(-1px)"
+              }}
+            />
+            <span className="underline-offset-4 group-hover:underline">GitHub</span>
+            <ArrowUpRight 
+              size={15} 
+              strokeWidth={1.75} 
+              aria-hidden="true" 
+              className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" 
+            />
+          </a>
+          <span
+            className="group inline-flex min-h-11 cursor-not-allowed items-center gap-1.5 text-[15px] opacity-50"
+            style={{ color: "var(--muted)" }}
+            aria-label="LinkedIn profile (coming soon)"
+            title="Coming soon"
+          >
+            <LinkedinIcon 
+              width={15} 
+              height={15} 
+              strokeWidth={1.75} 
+              aria-hidden="true" 
+              style={{
+                color: "var(--foreground)",
+                filter: "drop-shadow(1px 1px 0px var(--accent)) drop-shadow(2px 2px 0px rgba(0,0,0,0.1))",
+                transform: "translateY(-1px)"
+              }}
+            />
+            <span className="underline-offset-4">LinkedIn</span>
+            <ArrowUpRight 
+              size={15} 
+              strokeWidth={1.75} 
+              aria-hidden="true" 
+            />
+          </span>
+        </div>
+
+        <div className="mt-4 flex flex-col gap-4 sm:mt-10 sm:flex-row sm:items-center sm:gap-6">
           {profile.location && (
             <p className="flex items-center gap-2 font-mono text-xs tracking-wide" style={{ color: "var(--muted)" }}>
               <MapPin 
