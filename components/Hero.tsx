@@ -110,7 +110,7 @@ export default function Hero() {
             href={profile.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex min-h-11 items-center gap-1.5 text-[15px] transition-colors hover:text-[var(--foreground)]"
+            className="group inline-flex min-h-11 items-center gap-1.5 text-[15px] transition-all hover:text-[var(--foreground)] active:scale-95 active:opacity-70"
             style={{ color: "var(--muted)" }}
             aria-label="GitHub profile (opens in a new tab)"
           >
@@ -134,7 +134,7 @@ export default function Hero() {
             />
           </a>
           <span
-            className="group inline-flex min-h-11 cursor-not-allowed items-center gap-1.5 text-[15px] opacity-50"
+            className="group inline-flex min-h-11 cursor-not-allowed items-center gap-1.5 text-[15px] opacity-50 transition-all active:scale-95 active:opacity-40"
             style={{ color: "var(--muted)" }}
             aria-label="LinkedIn profile (coming soon)"
             title="Coming soon"

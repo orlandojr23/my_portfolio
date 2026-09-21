@@ -42,7 +42,7 @@ export default function StickyNav() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-xs font-medium underline-offset-4 transition-all hover:text-[var(--foreground)] hover:underline sm:text-sm"
+                className="inline-block text-xs font-medium underline-offset-4 transition-all hover:text-[var(--foreground)] hover:underline active:scale-95 active:opacity-70 sm:text-sm"
                 style={{ color: "var(--muted)" }}
                 tabIndex={isVisible ? 0 : -1}
               >
@@ -59,7 +59,7 @@ export default function StickyNav() {
             href={profile.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center text-xs transition-colors hover:text-[var(--foreground)] sm:text-sm"
+            className="group flex items-center text-xs transition-colors hover:text-[var(--foreground)] active:scale-95 active:opacity-70 sm:text-sm"
             style={{ color: "var(--muted)" }}
             aria-label="GitHub profile (opens in a new tab)"
             tabIndex={isVisible ? 0 : -1}
