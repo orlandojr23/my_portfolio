@@ -25,8 +25,8 @@ export default function StickyNav() {
 
   return (
     <div
-      className={`fixed top-0 left-0 right-0 z-50 flex justify-center py-4 transition-transform duration-500 ease-out ${
-        isVisible ? "translate-y-0" : "-translate-y-full"
+      className={`fixed bottom-0 left-0 right-0 z-50 flex justify-center py-6 transition-transform duration-500 ease-out ${
+        isVisible ? "translate-y-0" : "translate-y-full"
       }`}
       aria-hidden={!isVisible}
     >
