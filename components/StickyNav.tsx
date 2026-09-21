@@ -72,23 +72,20 @@ export default function StickyNav() {
               className="opacity-80 transition-all duration-200 group-hover:-translate-y-0.5 group-hover:opacity-100" 
             />
           </a>
-          <a
-            href={profile.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex items-center text-sm transition-colors hover:text-[var(--foreground)]"
+          <span
+            className="flex cursor-not-allowed items-center text-sm opacity-50"
             style={{ color: "var(--muted)" }}
-            aria-label="LinkedIn profile (opens in a new tab)"
-            tabIndex={isVisible ? 0 : -1}
+            aria-label="LinkedIn profile (coming soon)"
+            title="Coming soon"
           >
             <LinkedinIcon 
               width={16} 
               height={16} 
               strokeWidth={2} 
               aria-hidden="true" 
-              className="opacity-80 transition-all duration-200 group-hover:-translate-y-0.5 group-hover:opacity-100" 
+              className="opacity-80" 
             />
-          </a>
+          </span>
         </div>
       </nav>
     </div>

@@ -7,7 +7,6 @@
 import { ElementType } from "react";
 import {
   SiTypescript,
-  SiPython,
   SiJavascript,
   SiReact,
   SiNextdotjs,
@@ -15,10 +14,15 @@ import {
   SiNodedotjs,
   SiPostgresql,
   SiGit,
-  SiDocker,
+  SiGithub,
+  SiFirebase,
+  SiFramer,
+  SiSupabase,
   SiVercel,
 } from "react-icons/si";
-import { FaNetworkWired, FaRobot, FaBrain, FaCubes, FaTools } from "react-icons/fa";
+import { FaNetworkWired, FaRobot, FaBrain, FaCubes, FaTools, FaGhost, FaCode } from "react-icons/fa";
+import { VscVscode } from "react-icons/vsc";
+import { AntigravityIcon } from "@/components/Icons";
 export const profile = {
   name: "Orlando Junior Fornolles",
   role: "AI & Software Developer · Indie Developer",
@@ -29,13 +33,14 @@ export const profile = {
   statusLabel: "Currently exploring",
   statusValue: "Agentic AI",
   // Replace with your real URLs:
-  github: "https://github.com/your-username",
+  github: "https://github.com/orlandojr23",
   linkedin: "https://www.linkedin.com/in/your-username",
 };
 
 export const navLinks = [
   { label: "About", href: "#about" },
   { label: "Stack", href: "#stack" },
+  { label: "Awards", href: "#awards" },
   { label: "Projects", href: "#projects" },
 ] as const;
 
@@ -53,7 +58,6 @@ export const techStack: { group: string; items: { name: string; icon: ElementTyp
     group: "Languages",
     items: [
       { name: "TypeScript", icon: SiTypescript },
-      { name: "Python", icon: SiPython },
       { name: "JavaScript", icon: SiJavascript },
     ],
   },
@@ -63,30 +67,33 @@ export const techStack: { group: string; items: { name: string; icon: ElementTyp
       { name: "React", icon: SiReact },
       { name: "Next.js", icon: SiNextdotjs },
       { name: "Tailwind CSS", icon: SiTailwindcss },
+      { name: "Framer Motion", icon: SiFramer },
     ],
   },
   {
-    group: "Backend",
+    group: "Backend & DB",
     items: [
       { name: "Node.js", icon: SiNodedotjs },
+      { name: "Supabase", icon: SiSupabase },
+      { name: "Firebase", icon: SiFirebase },
       { name: "PostgreSQL", icon: SiPostgresql },
-      { name: "REST APIs", icon: FaNetworkWired },
     ],
   },
   {
     group: "AI",
     items: [
+      { name: "Google Antigravity", icon: AntigravityIcon },
+      { name: "AI Agents", icon: FaGhost },
       { name: "LLMs", icon: FaBrain },
-      { name: "RAG", icon: FaCubes },
-      { name: "AI Agents", icon: FaRobot },
-      { name: "AI SDKs", icon: FaTools },
     ],
   },
   {
     group: "Tools",
     items: [
+      { name: "VS Code", icon: VscVscode },
+      { name: "OpenCode", icon: FaCode },
       { name: "Git", icon: SiGit },
-      { name: "Docker", icon: SiDocker },
+      { name: "GitHub", icon: SiGithub },
       { name: "Vercel", icon: SiVercel },
     ],
   },
@@ -102,39 +109,17 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    name: "Project One",
+    name: "Bin'Go",
     description:
-      "I wanted a simpler way to work with long documents, so I built a small reading assistant that answers questions with citations. The interesting part is keeping retrieval honest. It says when it doesn't know.",
-    stack: "AI · Next.js · TypeScript",
-    github: "https://github.com/your-username/project-one",
-    live: "https://project-one.vercel.app",
-  },
-  {
-    name: "Project Two",
-    description:
-      "I kept repeating the same setup for every new idea, so I built a minimal starter I actually enjoy opening. Nothing clever, just sensible defaults and no clutter.",
-    stack: "React · Node.js · PostgreSQL",
-    github: "https://github.com/your-username/project-two",
-  },
-  {
-    name: "Project Three",
-    description:
-      "I was curious how far a small agent could get on boring tasks, so I built one that drafts, checks its own work, and asks before acting. It taught me more about restraint than about autonomy.",
-    stack: "AI Agents · Python · REST APIs",
-    github: "https://github.com/your-username/project-three",
-  },
-  {
-    name: "Project Four",
-    description:
-      "I wanted my own quiet corner for notes on things I'm learning, so I built a tiny site generator that stays out of the way. Fast to write, fast to load, easy to keep.",
-    stack: "Next.js · Tailwind CSS · Vercel",
-    github: "https://github.com/your-username/project-four",
-    live: "https://project-four.vercel.app",
+      "A smart waste collection management system designed to streamline community waste disposal. It provides dedicated interfaces for residents to report waste, drivers to navigate collection routes, and administrators to oversee fleet dispatching and community notifications.",
+    stack: "Next.js · Supabase · Tailwind CSS · React Leaflet",
+    github: "https://github.com/orlandojr23/bingo_website",
+    live: "https://simplybingo.vercel.app",
   },
 ];
 
 export const site = {
-  title: "Orlando Junior Fornolles | AI & Software Developer",
+  title: "Orlando F. | AI & Software Developer",
   description:
     "Orlando Junior Fornolles is an AI & Software Developer and indie developer building intuitive software at the intersection of AI and modern software development.",
   url: "https://your-domain.vercel.app", // Replace with your real domain

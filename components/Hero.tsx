@@ -77,13 +77,11 @@ export default function Hero() {
               </a>
             </li>
             <li>
-              <a
-                href={profile.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex min-h-11 items-center gap-1.5 text-[15px] transition-colors hover:text-[var(--foreground)]"
+              <span
+                className="group inline-flex min-h-11 cursor-not-allowed items-center gap-1.5 text-[15px] opacity-50"
                 style={{ color: "var(--muted)" }}
-                aria-label="LinkedIn profile (opens in a new tab)"
+                aria-label="LinkedIn profile (coming soon)"
+                title="Coming soon"
               >
                 <LinkedinIcon 
                   width={15} 
@@ -96,14 +94,13 @@ export default function Hero() {
                     transform: "translateY(-1px)"
                   }}
                 />
-                <span className="underline-offset-4 group-hover:underline">LinkedIn</span>
+                <span className="underline-offset-4">LinkedIn</span>
                 <ArrowUpRight 
                   size={15} 
                   strokeWidth={1.75} 
                   aria-hidden="true" 
-                  className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" 
                 />
-              </a>
+              </span>
             </li>
           </ul>
         </nav>

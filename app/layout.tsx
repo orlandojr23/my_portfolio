@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Image from "next/image";
 import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -15,27 +15,50 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#4f7a5f",
+};
+
 export const metadata: Metadata = {
-  title: site.title,
+  metadataBase: new URL(site.url),
+  title: {
+    default: site.title,
+    template: `%s | ${profile.name}`,
+  },
   description: site.description,
+  keywords: [
+    "Orlando Fornolles",
+    "AI Developer",
+    "Software Developer",
+    "Agentic AI",
+    "Full-Stack",
+    "React",
+    "Next.js",
+    "Indie Developer",
+  ],
   authors: [{ name: profile.name }],
   creator: profile.name,
-  metadataBase: new URL(site.url),
+  publisher: profile.name,
+  robots: {
+    index: true,
+    follow: true,
+  },
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
-    url: site.url,
+    url: "/",
     title: site.title,
     description: site.description,
     siteName: profile.name,
+    locale: "en_PH",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: site.title,
     description: site.description,
-  },
-  icons: {
-    icon: "/favicon.svg",
   },
 };
 
@@ -53,7 +76,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${inter.variable} ${geistMono.variable} h-full antialiased`}>
       <body className="min-h-full">
-        {/* Fixed Global Background Overlay */}
+        {/* Fixed Global Background Overlay - Top Right */}
         <div 
           className="pointer-events-none fixed top-[10%] right-[-20px] z-[-1] h-[280px] w-[280px] opacity-[0.04] mix-blend-multiply dark:opacity-[0.08] dark:mix-blend-screen sm:top-[15%] sm:right-10 sm:h-[600px] sm:w-[600px]"
           style={{ 
@@ -70,6 +93,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             priority
           />
         </div>
+
+
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[60] focus:rounded focus:px-3 focus:py-2 focus:text-sm"
