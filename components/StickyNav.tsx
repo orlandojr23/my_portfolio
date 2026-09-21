@@ -31,18 +31,18 @@ export default function StickyNav() {
       aria-hidden={!isVisible}
     >
       <nav
-        className="flex items-center gap-4 rounded-full border px-5 py-2.5 shadow-sm backdrop-blur-md sm:gap-6 sm:px-6"
+        className="mx-4 flex items-center gap-3 rounded-full border px-4 py-2 shadow-sm backdrop-blur-md sm:mx-0 sm:gap-6 sm:px-6 sm:py-2.5"
         style={{
           backgroundColor: "var(--nav-bg)",
           borderColor: "var(--border)",
         }}
       >
-        <ul className="flex items-center gap-4 sm:gap-6">
+        <ul className="flex items-center gap-3 sm:gap-6">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-sm font-medium underline-offset-4 transition-all hover:text-[var(--foreground)] hover:underline"
+                className="text-xs font-medium underline-offset-4 transition-all hover:text-[var(--foreground)] hover:underline sm:text-sm"
                 style={{ color: "var(--muted)" }}
                 tabIndex={isVisible ? 0 : -1}
               >
@@ -54,12 +54,12 @@ export default function StickyNav() {
 
         <div className="h-4 w-px" style={{ backgroundColor: "var(--border)" }} />
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 sm:gap-4">
           <a
             href={profile.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center text-sm transition-colors hover:text-[var(--foreground)]"
+            className="group flex items-center text-xs transition-colors hover:text-[var(--foreground)] sm:text-sm"
             style={{ color: "var(--muted)" }}
             aria-label="GitHub profile (opens in a new tab)"
             tabIndex={isVisible ? 0 : -1}

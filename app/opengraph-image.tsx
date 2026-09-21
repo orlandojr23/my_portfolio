@@ -15,7 +15,7 @@ export default async function Image() {
     (
       <div
         style={{
-          backgroundColor: '#fafaf8', // Matches var(--background)
+          backgroundColor: '#0d0d0d', // Matches var(--background)
           width: '100%',
           height: '100%',
           display: 'flex',
@@ -28,9 +28,9 @@ export default async function Image() {
           style={{
             fontSize: 90,
             fontWeight: 800,
-            color: '#171717', // Matches var(--foreground)
+            color: '#f5f5f5', // Matches var(--foreground)
             letterSpacing: '-0.02em',
-            textShadow: '5px 5px 0px #4f7a5f, 10px 10px 0px rgba(0,0,0,0.1)', // Scaled up version of the 3D shadow effect
+            textShadow: '5px 5px 0px #93b8a1, 10px 10px 0px rgba(0,0,0,0.3)', // Scaled up version of the 3D shadow effect using dark accent
           }}
         >
           Orlando Junior Fornolles

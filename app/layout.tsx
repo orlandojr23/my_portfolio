@@ -78,8 +78,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-full">
         {/* Fixed Global Background Overlay - Top Right */}
         <div 
-          className="pointer-events-none fixed top-[10%] right-[-20px] z-[-1] h-[280px] w-[280px] opacity-[0.04] mix-blend-multiply dark:opacity-[0.08] dark:mix-blend-screen sm:top-[15%] sm:right-10 sm:h-[600px] sm:w-[600px]"
+          className="pointer-events-none fixed top-[10%] right-[-20px] z-[-1] h-[280px] w-[280px] sm:top-[15%] sm:right-10 sm:h-[600px] sm:w-[600px]"
           style={{ 
+            opacity: "var(--img-opacity)",
+            mixBlendMode: "var(--img-blend)" as any,
             filter: "grayscale(100%) contrast(120%)",
             maskImage: "radial-gradient(ellipse at center, black 20%, transparent 70%)",
             WebkitMaskImage: "radial-gradient(ellipse at center, black 20%, transparent 70%)"
