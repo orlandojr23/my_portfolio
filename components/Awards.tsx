@@ -2,20 +2,23 @@
 
 import Image from "next/image";
 import Reveal from "./Reveal";
-import { Fredoka } from "next/font/google";
-
-const fredoka = Fredoka({ weight: "500", subsets: ["latin"] });
-
 export default function Awards() {
   return (
-    <section id="awards" className="mb-24 scroll-mt-24 sm:mb-32">
+    <section 
+      id="awards" 
+      aria-labelledby="awards-heading" 
+      className="border-t py-16 sm:py-20 scroll-mt-20"
+      style={{ borderColor: "var(--border)" }}
+    >
       <Reveal>
-        <h2 className="mb-8 text-2xl font-bold tracking-tight">Awards & Recognition</h2>
+        <h2 id="awards-heading" className="text-xl font-medium tracking-tight sm:text-2xl mb-8">
+          Awards & Recognition
+        </h2>
       </Reveal>
       
       <Reveal delay={0.1}>
         <div 
-          className="relative overflow-hidden rounded-2xl border p-2 sm:p-4"
+          className="relative overflow-hidden rounded-2xl border p-3 sm:p-5"
           style={{
             borderColor: "var(--border)",
             backgroundColor: "var(--card-bg)",
@@ -27,15 +30,13 @@ export default function Awards() {
                 src="/profile2.jpg"
                 alt="Awards in DevOps and Web Development"
                 fill
+                sizes="(max-width: 640px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>
             
             <div className="flex flex-col justify-center px-2 pb-4 sm:px-0 sm:pb-0">
-              <h3 
-                className={`mb-2 text-xl font-bold leading-snug tracking-wide ${fredoka.className}`}
-                style={{ textShadow: "1px 1px 0px var(--accent), 2px 2px 0px rgba(0,0,0,0.1)" }}
-              >
+              <h3 className="mb-2 text-xl font-bold leading-snug tracking-tight text-[var(--foreground)]">
                 DevOps of the Year <br className="hidden lg:block"/>& Best in Website Development
               </h3>
               <div className="mb-5 text-sm font-medium opacity-80" style={{ color: "var(--foreground)" }}>

@@ -7,7 +7,7 @@ export default function Projects() {
     <section
       id="projects"
       aria-labelledby="projects-heading"
-      className="border-t py-16 sm:py-20"
+      className="border-t py-16 sm:py-20 scroll-mt-20"
       style={{ borderColor: "var(--border)" }}
     >
       <Reveal>

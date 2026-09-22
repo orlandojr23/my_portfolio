@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { profile, site } from "@/data/portfolio";
-import StickyNav from "@/components/StickyNav";
+import MobilePillNav from "@/components/MobilePillNav";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -108,7 +108,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
-        <StickyNav />
+        <MobilePillNav />
         {children}
       </body>
     </html>

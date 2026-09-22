@@ -1,6 +1,5 @@
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import TechStack from "@/components/TechStack";
 import Awards from "@/components/Awards";
 import Projects from "@/components/Projects";
 import ScrollRestoration from "@/components/ScrollRestoration";
@@ -10,13 +9,12 @@ export default function Home() {
   return (
     <main
       id="main"
-      className="mx-auto w-full max-w-[900px] px-5 pb-10 sm:px-8"
+      className="mx-auto w-full max-w-[900px] px-5 pb-24 sm:pb-10 sm:px-8"
     >
       <ScrollRestoration />
       <div id="top" aria-hidden="true" />
       <Hero />
       <About />
-      <TechStack />
       <Awards />
       <Projects />
       <footer

@@ -28,7 +28,7 @@ export const profile = {
   statement: "I build intuitive software at the intersection of AI and modern software development.",
   subStatement: "Bridging theory, technology, and practical software.",
   philosophy: "Build powerful things. Keep them simple.",
-  location: "Cebu, Philippines",
+  location: "",
   statusLabel: "Currently exploring",
   statusValue: "Agentic AI",
   // Replace with your real URLs:
@@ -38,7 +38,6 @@ export const profile = {
 
 export const navLinks = [
   { label: "About", href: "#about" },
-  { label: "Stack", href: "#stack" },
   { label: "Awards", href: "#awards" },
   { label: "Projects", href: "#projects" },
 ] as const;

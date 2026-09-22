@@ -20,69 +20,44 @@ export default function ProjectItem({ project }: ProjectItemProps) {
       <p className="mt-4 font-mono text-xs tracking-wide" style={{ color: "var(--muted)" }}>
         {project.stack}
       </p>
-      <ul className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2" aria-label={`Links for ${project.name}`}>
+      <div className="mt-5 flex flex-wrap items-center gap-2.5" aria-label={`Links for ${project.name}`}>
         {project.github && (
-          <li>
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group/link inline-flex min-h-11 items-center gap-1.5 text-sm transition-colors hover:text-[var(--foreground)]"
-              style={{ color: "var(--muted)" }}
-              aria-label={`${project.name} source code on GitHub (opens in a new tab)`}
-            >
-              <GithubIcon 
-                width={14} 
-                height={14} 
-                strokeWidth={1.75} 
-                aria-hidden="true" 
-                style={{
-                  color: "var(--foreground)",
-                  filter: "drop-shadow(1px 1px 0px var(--accent)) drop-shadow(2px 2px 0px rgba(0,0,0,0.1))",
-                  transform: "translateY(-1px)"
-                }}
-              />
-              <span className="underline-offset-4 group-hover/link:underline">GitHub</span>
-              <ArrowUpRight
-                size={14}
-                strokeWidth={1.75}
-                aria-hidden="true"
-                className="transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
-              />
-            </a>
-          </li>
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group/btn inline-flex items-center gap-2 rounded-lg border border-[var(--border)] bg-[#141414] px-3 py-1.5 font-mono text-xs text-[var(--muted)] transition-all duration-200 hover:border-[#383838] hover:bg-[#1f1f1f] hover:text-[var(--foreground)] active:scale-95"
+            aria-label={`${project.name} source code on GitHub (opens in a new tab)`}
+          >
+            <GithubIcon className="h-3.5 w-3.5" aria-hidden="true" />
+            <span>GitHub</span>
+            <ArrowUpRight
+              size={12}
+              strokeWidth={2}
+              aria-hidden="true"
+              className="text-[var(--muted)] transition-transform duration-200 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 group-hover/btn:text-[var(--foreground)]"
+            />
+          </a>
         )}
         {project.live && (
-          <li>
-            <a
-              href={project.live}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group/link inline-flex min-h-11 items-center gap-1.5 text-sm transition-colors hover:text-[var(--foreground)]"
-              style={{ color: "var(--muted)" }}
-              aria-label={`${project.name} live site (opens in a new tab)`}
-            >
-              <Globe 
-                size={14} 
-                strokeWidth={1.75} 
-                aria-hidden="true" 
-                style={{
-                  color: "var(--foreground)",
-                  filter: "drop-shadow(1px 1px 0px var(--accent)) drop-shadow(2px 2px 0px rgba(0,0,0,0.1))",
-                  transform: "translateY(-1px)"
-                }}
-              />
-              <span className="underline-offset-4 group-hover/link:underline">Live</span>
-              <ArrowUpRight
-                size={14}
-                strokeWidth={1.75}
-                aria-hidden="true"
-                className="transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
-              />
-            </a>
-          </li>
+          <a
+            href={project.live}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group/btn inline-flex items-center gap-2 rounded-lg border border-[var(--border)] bg-[#141414] px-3 py-1.5 font-mono text-xs text-[var(--muted)] transition-all duration-200 hover:border-[#383838] hover:bg-[#1f1f1f] hover:text-[var(--foreground)] active:scale-95"
+            aria-label={`${project.name} live demo (opens in a new tab)`}
+          >
+            <Globe size={13} strokeWidth={2} aria-hidden="true" className="text-[var(--accent)]" />
+            <span>Live Demo</span>
+            <ArrowUpRight
+              size={12}
+              strokeWidth={2}
+              aria-hidden="true"
+              className="text-[var(--muted)] transition-transform duration-200 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 group-hover/btn:text-[var(--foreground)]"
+            />
+          </a>
         )}
-      </ul>
+      </div>
     </article>
   );
 }

@@ -3,7 +3,7 @@ import Reveal from "./Reveal";
 
 export default function About() {
   return (
-    <section id="about" aria-labelledby="about-heading" className="border-t py-16 sm:py-20" style={{ borderColor: "var(--border)" }}>
+    <section id="about" aria-labelledby="about-heading" className="border-t py-16 sm:py-20 scroll-mt-20" style={{ borderColor: "var(--border)" }}>
       <Reveal>
         <h2 id="about-heading" className="text-xl font-medium tracking-tight sm:text-2xl">
           {about.heading}
