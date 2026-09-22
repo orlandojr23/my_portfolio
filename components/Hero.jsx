@@ -9,7 +9,10 @@ const fredoka = Fredoka({ weight: "500", subsets: ["latin"] });
 
 export default function Hero() {
   return (
-    <section aria-labelledby="hero-heading" className="relative pb-12 pt-10 sm:pb-28 sm:pt-24">
+    <section
+      aria-labelledby="hero-heading"
+      className="relative pb-12 pt-10 sm:pb-28 sm:pt-24"
+    >
       <Reveal className="relative z-10">
         <h1
           id="hero-heading"
@@ -19,11 +22,12 @@ export default function Hero() {
           <span className="sm:hidden">Orlando F.</span>
           <VerifiedBadge className="ml-3 mb-1" />
         </h1>
-        <p 
-          className={`mt-4 text-lg sm:text-xl ${fredoka.className}`} 
-          style={{ 
+        <p
+          className={`mt-4 text-lg sm:text-xl ${fredoka.className}`}
+          style={{
             color: "var(--foreground)",
-            textShadow: "1px 1px 0px var(--accent), 2px 2px 0px rgba(0,0,0,0.1)"
+            textShadow:
+              "1px 1px 0px var(--accent), 2px 2px 0px rgba(0,0,0,0.1)",
           }}
         >
           {profile.role}
@@ -62,11 +66,11 @@ export default function Hero() {
             >
               <GithubIcon className="h-4 w-4" aria-hidden="true" />
               <span>GitHub</span>
-              <ArrowUpRight 
-                size={14} 
-                strokeWidth={2} 
-                aria-hidden="true" 
-                className="text-[var(--muted)] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-[var(--foreground)]" 
+              <ArrowUpRight
+                size={14}
+                strokeWidth={2}
+                aria-hidden="true"
+                className="text-[var(--muted)] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-[var(--foreground)]"
               />
             </a>
 
@@ -79,11 +83,11 @@ export default function Hero() {
             >
               <LinkedinIcon className="h-4 w-4" aria-hidden="true" />
               <span>LinkedIn</span>
-              <ArrowUpRight 
-                size={14} 
-                strokeWidth={2} 
-                aria-hidden="true" 
-                className="text-[var(--muted)] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-[var(--foreground)]" 
+              <ArrowUpRight
+                size={14}
+                strokeWidth={2}
+                aria-hidden="true"
+                className="text-[var(--muted)] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-[var(--foreground)]"
               />
             </a>
 
@@ -96,11 +100,11 @@ export default function Hero() {
             >
               <GoogleCalendarIcon className="h-4 w-4" aria-hidden="true" />
               <span>Meet me</span>
-              <ArrowUpRight 
-                size={14} 
-                strokeWidth={2} 
-                aria-hidden="true" 
-                className="text-[var(--muted)] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-[var(--foreground)]" 
+              <ArrowUpRight
+                size={14}
+                strokeWidth={2}
+                aria-hidden="true"
+                className="text-[var(--muted)] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-[var(--foreground)]"
               />
             </a>
           </div>
@@ -108,16 +112,21 @@ export default function Hero() {
 
         <div className="mt-4 flex flex-col gap-4 sm:mt-10 sm:flex-row sm:items-center sm:gap-6">
           {profile.location && (
-            <p className="flex items-center gap-2 font-mono text-xs tracking-wide" style={{ color: "var(--muted)" }}>
-              <MapPin 
-                size={16} 
+            <p
+              className="flex items-center gap-2 font-mono text-xs tracking-wide"
+              style={{ color: "var(--muted)" }}
+            >
+              <MapPin
+                size={16}
                 strokeWidth={2.5}
                 style={{
                   color: "var(--foreground)",
-                  filter: "drop-shadow(1px 1px 0px var(--accent)) drop-shadow(2px 2px 0px rgba(0,0,0,0.1))",
-                  transform: "translateY(-1px)"
+                  filter:
+                    "drop-shadow(1px 1px 0px var(--accent)) drop-shadow(2px 2px 0px rgba(0,0,0,0.1))",
+                  transform: "translateY(-1px)",
                 }}
               />
+
               <span>{profile.location}</span>
             </p>
           )}

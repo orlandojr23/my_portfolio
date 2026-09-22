@@ -1,4 +1,3 @@
-import type { Metadata, Viewport } from "next";
 import Image from "next/image";
 import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -15,14 +14,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const viewport: Viewport = {
+export const viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
   themeColor: "#4f7a5f",
 };
 
-export const metadata: Metadata = {
+export const metadata = {
   metadataBase: new URL(site.url),
   title: {
     default: site.title,
@@ -72,19 +71,24 @@ const structuredData = {
   sameAs: [profile.github, profile.linkedin],
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${geistMono.variable} h-full antialiased`}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${geistMono.variable} h-full antialiased`}
+    >
       <body className="min-h-full">
         {/* Fixed Global Background Overlay - Top Right */}
-        <div 
+        <div
           className="pointer-events-none fixed top-[10%] right-[-20px] z-[-1] h-[280px] w-[280px] sm:top-[15%] sm:right-10 sm:h-[600px] sm:w-[600px]"
-          style={{ 
+          style={{
             opacity: "var(--img-opacity)",
-            mixBlendMode: "var(--img-blend)" as any,
+            mixBlendMode: "var(--img-blend)",
             filter: "grayscale(100%) contrast(120%)",
-            maskImage: "radial-gradient(ellipse at center, black 20%, transparent 70%)",
-            WebkitMaskImage: "radial-gradient(ellipse at center, black 20%, transparent 70%)"
+            maskImage:
+              "radial-gradient(ellipse at center, black 20%, transparent 70%)",
+            WebkitMaskImage:
+              "radial-gradient(ellipse at center, black 20%, transparent 70%)",
           }}
         >
           <Image
@@ -96,11 +100,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           />
         </div>
 
-
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[60] focus:rounded focus:px-3 focus:py-2 focus:text-sm"
-          style={{ background: "var(--foreground)", color: "var(--background)" }}
+          style={{
+            background: "var(--foreground)",
+            color: "var(--background)",
+          }}
         >
           Skip to content
         </a>
@@ -108,6 +114,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
+
         <MobilePillNav />
         {children}
       </body>

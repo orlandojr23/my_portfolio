@@ -1,16 +1,9 @@
 "use client";
 
 import { motion, useReducedMotion } from "motion/react";
-import type { ReactNode } from "react";
-
-type RevealProps = {
-  children: ReactNode;
-  delay?: number;
-  className?: string;
-};
 
 /** Very subtle fade-in. Renders statically when reduced motion is preferred. */
-export default function Reveal({ children, delay = 0, className }: RevealProps) {
+export default function Reveal({ children, delay = 0, className }) {
   const reduceMotion = useReducedMotion();
   if (reduceMotion) return <div className={className}>{children}</div>;
   return (

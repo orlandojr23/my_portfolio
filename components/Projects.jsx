@@ -11,7 +11,10 @@ export default function Projects() {
       style={{ borderColor: "var(--border)" }}
     >
       <Reveal>
-        <h2 id="projects-heading" className="text-xl font-medium tracking-tight sm:text-2xl">
+        <h2
+          id="projects-heading"
+          className="text-xl font-medium tracking-tight sm:text-2xl"
+        >
           Projects
         </h2>
       </Reveal>

@@ -4,7 +4,6 @@
 // bio, stack, projects, status.
 // ─────────────────────────────────────────────
 
-import { ElementType } from "react";
 import {
   SiTypescript,
   SiJavascript,
@@ -20,12 +19,13 @@ import {
   SiSupabase,
   SiVercel,
 } from "react-icons/si";
-import { FaNetworkWired, FaRobot, FaBrain, FaCubes, FaTools, FaGhost, FaCode } from "react-icons/fa";
+import { FaBrain, FaGhost, FaCode } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
 export const profile = {
   name: "Orlando Junior Fornolles",
   role: "Software Developer · Indie Developer",
-  statement: "I build smart, easy-to-use apps by combining modern tech with AI.",
+  statement:
+    "I build smart, easy-to-use apps by combining modern tech with AI.",
   subStatement: "Turning big ideas into simple, working software.",
   philosophy: "Build things that matter. Keep them simple.",
   location: "",
@@ -40,18 +40,24 @@ export const navLinks = [
   { label: "About", href: "#about" },
   { label: "Awards", href: "#awards" },
   { label: "Projects", href: "#projects" },
-] as const;
+];
 
 export const about = {
   heading: "About",
   paragraphs: [
-    "Hi, I'm Orlando. I'm a Software Developer and Indie Developer who loves taking complex problems and solving them with simple, effective software. My work blends full-stack web development with the latest in artificial intelligence.",
+    "Hi, I'm Orlando. I'm a Software · Indie Developer who loves taking complex problems and solving them with simple, effective software. My work blends full-stack web development with the latest in artificial intelligence.",
     "I'm deeply curious about how technology works behind the scenes. Whether I'm building my own independent apps, exploring AI agents, or sharing what I learn, my goal is always to create tools that are actually useful and easy to understand.",
   ],
-  labels: ["AI", "Software Engineering", "Full-Stack", "Agentic AI", "Developer Tools"],
+  labels: [
+    "AI",
+    "Software Engineering",
+    "Full-Stack",
+    "Agentic AI",
+    "Developer Tools",
+  ],
 };
 
-export const techStack: { group: string; items: { name: string; icon: ElementType }[] }[] = [
+export const techStack = [
   {
     group: "Languages",
     items: [
@@ -96,15 +102,7 @@ export const techStack: { group: string; items: { name: string; icon: ElementTyp
   },
 ];
 
-export type Project = {
-  name: string;
-  description: string;
-  stack: string;
-  github?: string;
-  live?: string;
-};
-
-export const projects: Project[] = [
+export const projects = [
   {
     name: "Bin'Go",
     description:
