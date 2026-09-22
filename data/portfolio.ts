@@ -24,10 +24,10 @@ import { FaNetworkWired, FaRobot, FaBrain, FaCubes, FaTools, FaGhost, FaCode } f
 import { VscVscode } from "react-icons/vsc";
 export const profile = {
   name: "Orlando Junior Fornolles",
-  role: "AI & Software Developer · Indie Developer",
-  statement: "I build intuitive software at the intersection of AI and modern software development.",
-  subStatement: "Bridging theory, technology, and practical software.",
-  philosophy: "Build powerful things. Keep them simple.",
+  role: "Software Developer · Indie Developer",
+  statement: "I build smart, easy-to-use apps by combining modern tech with AI.",
+  subStatement: "Turning big ideas into simple, working software.",
+  philosophy: "Build things that matter. Keep them simple.",
   location: "",
   statusLabel: "Currently exploring",
   statusValue: "Agentic AI",
@@ -45,8 +45,8 @@ export const navLinks = [
 export const about = {
   heading: "About",
   paragraphs: [
-    "I'm an AI & Software Developer who enjoys turning complex ideas into simple software. My work sits between full-stack development, artificial intelligence, and emerging agentic workflows.",
-    "I like understanding how things work, then figuring out how to make them useful. I also enjoy connecting academic concepts with practical software through building, sharing, and speaking.",
+    "Hi, I'm Orlando. I'm a Software Developer and Indie Developer who loves taking complex problems and solving them with simple, effective software. My work blends full-stack web development with the latest in artificial intelligence.",
+    "I'm deeply curious about how technology works behind the scenes. Whether I'm building my own independent apps, exploring AI agents, or sharing what I learn, my goal is always to create tools that are actually useful and easy to understand.",
   ],
   labels: ["AI", "Software Engineering", "Full-Stack", "Agentic AI", "Developer Tools"],
 };
@@ -108,7 +108,7 @@ export const projects: Project[] = [
   {
     name: "Bin'Go",
     description:
-      "A smart waste collection management system designed to streamline community waste disposal. It provides dedicated interfaces for residents to report waste, drivers to navigate collection routes, and administrators to oversee fleet dispatching and community notifications.",
+      "A smart waste collection app that makes community disposal easy. Residents can quickly report waste, drivers get clear routes, and admins can easily manage the fleet and send community updates.",
     stack: "Next.js · Supabase · Tailwind CSS · React Leaflet",
     github: "https://github.com/orlandojr23/bingo_website",
     live: "https://simplybingo.vercel.app",
@@ -116,8 +116,8 @@ export const projects: Project[] = [
 ];
 
 export const site = {
-  title: "Orlando F. | AI & Software Developer",
+  title: "Orlando F. | Software Developer",
   description:
-    "Orlando Junior Fornolles is an AI & Software Developer and indie developer building intuitive software at the intersection of AI and modern software development.",
+    "Orlando Junior Fornolles is a Software Developer and Indie Developer building smart, easy-to-use apps by combining modern tech with AI.",
   url: "https://orlandojuniorfornolles.vercel.app",
 };
