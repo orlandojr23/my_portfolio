@@ -22,7 +22,6 @@ import {
 } from "react-icons/si";
 import { FaNetworkWired, FaRobot, FaBrain, FaCubes, FaTools, FaGhost, FaCode } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
-import { AntigravityIcon } from "@/components/Icons";
 export const profile = {
   name: "Orlando Junior Fornolles",
   role: "AI & Software Developer · Indie Developer",
@@ -82,7 +81,6 @@ export const techStack: { group: string; items: { name: string; icon: ElementTyp
   {
     group: "AI",
     items: [
-      { name: "Google Antigravity", icon: AntigravityIcon },
       { name: "AI Agents", icon: FaGhost },
       { name: "LLMs", icon: FaBrain },
     ],
