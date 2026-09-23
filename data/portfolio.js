@@ -45,7 +45,7 @@ export const navLinks = [
 export const about = {
   heading: "About",
   paragraphs: [
-    "Hi, I'm Orlando. I'm a Software · Indie Developer who loves taking complex problems and solving them with simple, effective software. My work blends full-stack web development with the latest in artificial intelligence.",
+    "Hi, I'm Orlando. I'm an AI, software, and indie developer based in Cebu, Philippines. I love taking complex problems and solving them with simple, effective software. My work blends full-stack web development with the latest in artificial intelligence.",
     "I'm deeply curious about how technology works behind the scenes. Whether I'm building my own independent apps, exploring AI agents, or sharing what I learn, my goal is always to create tools that are actually useful and easy to understand.",
   ],
   labels: [
